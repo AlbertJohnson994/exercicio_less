@@ -1,0 +1,113 @@
+@import "variables.less";
+@import "mapa.less";
+
+@breakpointMobile: ~"(max-width: 767px)";
+@breakpointTablet: ~"(max-width: 1023px)";
+
+.marginButtom {
+    margin-bottom: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #colors[backgroundColor];
+    color: @corDeTextos;
+}
+
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+    @media @breakpointTablet {
+        max-width: 80%;
+        //background-color: yellowgreen;
+    }
+    @media @breakpointMobile {
+        //background-color: red;
+        max-width: 70%;
+    }
+}
+
+header {
+    padding-bottom: 24px;
+
+    .profile-avatar {
+        display: block;
+        margin: 0 auto 24px;
+        border-radius: 100px;
+    }
+}
+
+.profile-bio {
+    text-align: center;
+
+    &-name {
+        font-size: 16px;
+        .marginButtom();
+        text-align: center;
+    }
+    &-subtitle {
+        font-size: 14px;
+        .marginButtom();
+    }
+    &-description {
+        font-size: 14px;
+        opacity: 0.7;
+    }
+}
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    max-width: 240px;
+    width: 100%;
+    margin: 0 auto;
+
+    li {
+        list-style: none;
+
+        img {
+            transition: all ease 3;
+            &:hover {
+                transform: scale(1.3);
+            }
+        }
+    }
+}
+
+.project-list {
+    margin-top: 32px;
+
+    &-item {
+        a {
+            text-decoration: none;
+            background-color: #colors[buttomColor];
+            display: block;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            text-align: center;
+            color: @corDeTextos;
+            font-weight: bold;
+            border-radius: 60%;
+            border: 2px solid #colors[buttomColor];
+            transition: all ease 0.5s;
+
+            &:hover {
+                color: #colors[buttomColor];
+                background-color: transparent;
+            }
+        }
+    }
+}
